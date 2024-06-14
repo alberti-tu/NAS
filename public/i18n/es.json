@@ -1,0 +1,14 @@
+{
+  "languages": {
+    "de": "Alemán",
+    "en": "Inglés",
+    "es": "Español",
+    "fr": "Francés"
+  },
+  "pages": {
+    "files": "Archivos",
+    "photos": "Fotos",
+    "video": "Vídeo",
+    "audio": "Audio"
+  }
+}

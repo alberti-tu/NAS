@@ -3,7 +3,7 @@
 */
 const nextConfig = {
     output: 'export',
-    distDir: 'build'
-};
+    distDir: 'build',
+}
 
-export default nextConfig;
+export default nextConfig
