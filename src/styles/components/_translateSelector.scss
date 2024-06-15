@@ -1,0 +1,24 @@
+.translate_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  background: linear-gradient(0deg, #0a509a 0%, #60a8f5 100%);
+  padding: 0.5rem;
+
+  .translate_item {
+    margin: 0.5rem;
+    color: white;
+    font-size: 0.75rem;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+
+    &.selected {
+      color: black;
+      font-weight: 600;
+    }
+  }
+}

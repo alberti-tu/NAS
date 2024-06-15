@@ -1,4 +1,8 @@
+import * as React from 'react'
+
 import Button, { ButtonProps } from '@/components/button'
+import Footer from '@/components/footer'
+import TranslateSelector from '@/components/translateSelector'
 
 const butttons: ButtonProps[] = [
   {
@@ -35,6 +39,9 @@ const HomePage = (): JSX.Element => {
           {butttons.map((item, index) => <Button key={index} {...item} />)}
         </div>
       </div>
+      <Footer>
+        <TranslateSelector />
+      </Footer>
     </div>
   )
 }

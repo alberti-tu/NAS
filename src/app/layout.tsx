@@ -1,24 +1,28 @@
-import type { Metadata } from 'next'
+'use client'
 
+import * as React from 'react'
+
+import '../services/translation'
 import '../styles/styles.scss'
-
-export const metadata: Metadata = {
-  title: 'NAS',
-  description: 'Landing page of NAS services',
-  icons: [
-    {
-      rel: 'icon',
-      type: 'image/x-icon',
-      url: '/favicon.ico',
-    }
-  ]
-}
+import { setCurrentLanguage } from '../services/translation'
 
 type IProps = Readonly<{ children: React.ReactNode }>
 
 export default function RootLayout({ children }: IProps) {
+  React.useEffect(() => {
+    let result = false
+    navigator.languages.forEach(item => {
+      if (!result) {
+        result = setCurrentLanguage(item)
+      }
+    })
+  },[])
+
   return (
     <html lang="en">
+      <head>
+        <title>NAS</title>
+      </head>
       <body>
         {children}
       </body>
