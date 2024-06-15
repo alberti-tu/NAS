@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 
-import { getCurrentLanguage, getLanguages, setCurrentLanguage } from '@/services/translation'
 import { useTranslation } from 'react-i18next'
+
+import { getCurrentLanguage, getLanguages, setCurrentLanguage } from '@/services/translation'
 
 const TranslateSelector = (): JSX.Element => {
   const { t } = useTranslation()

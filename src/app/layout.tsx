@@ -2,9 +2,10 @@
 
 import * as React from 'react'
 
+import { setCurrentLanguage } from '../services/translation'
+
 import '../services/translation'
 import '../styles/styles.scss'
-import { setCurrentLanguage } from '../services/translation'
 
 type IProps = Readonly<{ children: React.ReactNode }>
 

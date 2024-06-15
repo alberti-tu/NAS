@@ -1,6 +1,7 @@
 import Button, { ButtonProps } from '@/components/button'
-import TranslateSelector from '@/components/translateSelector'
+import Header from '@/components/header'
 import PageContainer from '@/components/pageContainer'
+import TranslateSelector from '@/components/translateSelector'
 
 const butttons: ButtonProps[] = [
   {
@@ -32,6 +33,7 @@ const butttons: ButtonProps[] = [
 const HomePage = (): JSX.Element => {
   return (
     <PageContainer
+      header={<Header />}
       footer={<TranslateSelector />}
     >
       <div className="background-image" style={{ backgroundImage: 'url(/background.jpg)' }}>

@@ -1,4 +1,5 @@
 'use client'
+
 import * as React from 'react'
 
 type IProps = {
@@ -52,7 +53,7 @@ const PageContainer = ({ header, children, footer }: IProps): JSX.Element => {
   }, [footerHeight, footerWidth])
 
   return (
-    <div className="page">
+    <div style={{ height: '100vh', width: '100vw' }}>
       <div ref={headerRef}>
         {header}
       </div>
