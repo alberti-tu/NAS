@@ -3,7 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: right;
-  background: linear-gradient(0deg, #60a8f5 0%, #0a509a 100%);
+  background: linear-gradient(0deg, $primary-light 0%, $primary-dark 100%);
   padding: 0.75rem 1.25rem;
 
   .button {
@@ -13,7 +13,7 @@
     cursor: pointer;
 
     &:hover {
-      background: gray;
+      background: $gray;
       border-radius: 50%;
       filter: grayscale(100%) invert(1);
     }

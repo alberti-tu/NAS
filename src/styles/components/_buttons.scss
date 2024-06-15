@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   row-gap: 1rem;
-  
   padding: 2rem;
 
   .button {
@@ -11,9 +10,9 @@
     display: flex;
     align-items: center;
   
-    border: solid 4px rgba(#000000, 0);
+    border: solid 4px rgba($dark, 0);
     border-radius: 0.75rem;
-    box-shadow: 0rem 0.375rem 0.75rem rgba(#000000, 0.2);
+    box-shadow: 0rem 0.375rem 0.75rem rgba($dark, 0.2);
     
     padding: 0.5rem 2rem;
     font-size: 20px;
@@ -36,14 +35,14 @@
 
     &:hover {
       transition: all 500ms;
-      border: solid 4px #ffffff;
-      color: white;
+      border: solid 4px $light;
+      color: $light;
       font-size: 24px;
       font-weight: 600;
 
       img {
         transition: all 500ms;
-        background: white;
+        background: $light;
         border-radius: 50%;
       }
     }
