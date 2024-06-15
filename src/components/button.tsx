@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 
 export type ButtonProps = {
@@ -13,23 +12,19 @@ export type ButtonProps = {
 
 const Button = ({ background, href, icon, label }: ButtonProps): JSX.Element => {
   const { t } = useTranslation()
-  const router = useRouter()
 
   return (
-    <button
-      onClick={() => href && router.push(href)}
-      style={{ background }}
-    >
+    <a href={href} className="button" style={{ background }}>
       {icon && (
         <Image
-          src={`/icons/${icon}.png`}
-          alt=""
+          src={icon}
+          alt={icon}
           height={24}
           width={24}
         />
       )}
       {t(label)}
-    </button>
+    </a>
   )
 }
 
