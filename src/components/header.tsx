@@ -7,9 +7,9 @@ type ToolbarButton = {
   icon?: string
 }
 
-const toolbarButtons : ToolbarButton[] = [
+const toolbarButtons: ToolbarButton[] = [
   { href: '/phpmyadmin', icon: '/icons/database.svg' },
-  { href: `https://${location.hostname}:5001`, icon: '/icons/settings.svg' }
+  { href: 'https://myhouselan.ddns.net:5001', icon: '/icons/settings.svg' }
 ]
 
 const Header = (): JSX.Element => {
