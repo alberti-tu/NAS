@@ -1,8 +1,6 @@
-import * as React from 'react'
-
 import Button, { ButtonProps } from '@/components/button'
-import Footer from '@/components/footer'
 import TranslateSelector from '@/components/translateSelector'
+import PageContainer from '@/components/pageContainer'
 
 const butttons: ButtonProps[] = [
   {
@@ -33,16 +31,15 @@ const butttons: ButtonProps[] = [
 
 const HomePage = (): JSX.Element => {
   return (
-    <div className="page">
+    <PageContainer
+      footer={<TranslateSelector />}
+    >
       <div className="background-image" style={{ backgroundImage: 'url(/background.jpg)' }}>
         <div className="button-group">
           {butttons.map((item, index) => <Button key={index} {...item} />)}
         </div>
       </div>
-      <Footer>
-        <TranslateSelector />
-      </Footer>
-    </div>
+    </PageContainer>
   )
 }
 
