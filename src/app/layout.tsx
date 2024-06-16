@@ -2,31 +2,46 @@
 
 import * as React from 'react'
 
-import { setCurrentLanguage } from '../services/translation'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+
+import { persistor, store, useAppDispatch, useAppSelector } from '@/services/store'
+import { getLanguages } from '@/services/translation'
 
 import '../services/translation'
 import '../styles/styles.scss'
+import { selectSettingsLanguage, setLanguage } from '@/data/settings'
 
 type IProps = Readonly<{ children: React.ReactNode }>
 
-export default function RootLayout({ children }: IProps) {
-  React.useEffect(() => {
-    let result = false
-    navigator.languages.forEach(item => {
-      if (!result) {
-        result = setCurrentLanguage(item)
-      }
-    })
-  },[])
+function Main({ children }: IProps) {
+  const dispatch = useAppDispatch()
 
-  return (
-    <html lang="en">
-      <head>
-        <title>NAS</title>
-      </head>
-      <body>
-        {children}
-      </body>
-    </html>
-  )
+  const userLanguage = useAppSelector(selectSettingsLanguage)
+
+  React.useEffect(() => {
+    const language = userLanguage || navigator.languages
+      .map(item => item.split('-')[0])
+      .find(item => getLanguages().includes(item))
+    dispatch(setLanguage(language))
+  },[dispatch, userLanguage])
+
+  return children
 }
+
+const RootLayout = ({ children }: IProps) => (
+  <html lang="en">
+    <head>
+      <title>NAS</title>
+    </head>
+    <body>
+      <PersistGate persistor={persistor}>
+        <Provider store={store}>
+          <Main>{children}</Main>
+        </Provider>
+      </PersistGate>
+    </body>
+  </html>
+)
+
+export default RootLayout

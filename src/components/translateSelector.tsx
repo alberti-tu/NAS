@@ -4,10 +4,13 @@ import * as React from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { getCurrentLanguage, getLanguages, setCurrentLanguage } from '@/services/translation'
+import { setLanguage } from '@/data/settings'
+import { getCurrentLanguage, getLanguages } from '@/services/translation'
+import { useAppDispatch } from '@/services/store'
 
 const TranslateSelector = (): JSX.Element => {
   const { t } = useTranslation()
+  const dispatch = useAppDispatch()
 
   return (
     <div className="translate_container">
@@ -15,7 +18,7 @@ const TranslateSelector = (): JSX.Element => {
         <div
           key={index}
           className={`translate_item ${item === getCurrentLanguage() && 'selected'}`}
-          onClick={() => setCurrentLanguage(item)}
+          onClick={() => dispatch(setLanguage(item))}
         >
           {t(`languages.${item}`, item)}
         </div>
