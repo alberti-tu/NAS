@@ -5,12 +5,12 @@ import * as React from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
+import { selectSettingsLanguage, setLanguage } from '@/data/settings'
 import { persistor, store, useAppDispatch, useAppSelector } from '@/services/store'
 import { getLanguages } from '@/services/translation'
 
 import '../services/translation'
 import '../styles/styles.scss'
-import { selectSettingsLanguage, setLanguage } from '@/data/settings'
 
 type IProps = Readonly<{ children: React.ReactNode }>
 

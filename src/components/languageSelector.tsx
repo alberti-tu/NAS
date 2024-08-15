@@ -8,7 +8,7 @@ import { setLanguage } from '@/data/settings'
 import { getCurrentLanguage, getLanguages } from '@/services/translation'
 import { useAppDispatch } from '@/services/store'
 
-const TranslateSelector = (): JSX.Element => {
+const LanguageSelector = (): JSX.Element => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
@@ -27,4 +27,4 @@ const TranslateSelector = (): JSX.Element => {
   )
 }
 
-export default TranslateSelector
+export default LanguageSelector

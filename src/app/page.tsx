@@ -1,7 +1,6 @@
 import Button, { ButtonProps } from '@/components/button'
 import Header from '@/components/header'
-import PageContainer from '@/components/pageContainer'
-import TranslateSelector from '@/components/translateSelector'
+import LanguageSelector from '@/components/languageSelector'
 
 const butttons: ButtonProps[] = [
   {
@@ -32,16 +31,15 @@ const butttons: ButtonProps[] = [
 
 const HomePage = (): JSX.Element => {
   return (
-    <PageContainer
-      header={<Header />}
-      footer={<TranslateSelector />}
-    >
+    <div className="page">
+      <Header />
       <div className="background-image" style={{ backgroundImage: 'url(/background.jpg)' }}>
         <div className="button-group">
           {butttons.map((item, index) => <Button key={index} {...item} />)}
         </div>
       </div>
-    </PageContainer>
+      <LanguageSelector />
+    </div>
   )
 }
 
